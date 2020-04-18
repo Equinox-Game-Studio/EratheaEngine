@@ -726,13 +726,13 @@ namespace Intersect.Server.Localization
 
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)] [NotNull]
             public readonly LocalizedString support =
-                @"-Edited Intersect Engine-";
+                @"For help, support, and updates visit: https://www.ascensiongamedev.com";
 
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)] [NotNull]
-            public readonly LocalizedString tagline = @"                    Revolutionizing 2DORPGs";
+            public readonly LocalizedString tagline = @"                          free 2d orpg engine";
 
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)] [NotNull]
-            public readonly LocalizedString title = @"Erathea Server";
+            public readonly LocalizedString title = @"Intersect Server";
 
             [JsonProperty(NullValueHandling = NullValueHandling.Ignore)] [NotNull]
             public readonly LocalizedString version = @"Version {00}";

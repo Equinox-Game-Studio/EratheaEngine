@@ -246,7 +246,6 @@ namespace Intersect.Server.Core
         private static void PrintIntroduction()
         {
             Console.Clear();
-            
             Console.WriteLine();
             Console.WriteLine(@" _____           _   _                ");
             Console.WriteLine(@"| ____|_ __ __ _| |_| |__   ___  __ _ ");
