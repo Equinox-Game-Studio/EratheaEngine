@@ -1062,8 +1062,12 @@ namespace Intersect.Server.Entities
 
             if (weapon != null)
             {
+                //base.TryAttack(
+                //    target, weapon.Damage, (DamageType) weapon.DamageType, (Stats) weapon.ScalingStat, weapon.Scaling,
+                //    weapon.CritChance, weapon.CritMultiplier, null, null, weapon
+                //);
                 base.TryAttack(
-                    target, weapon.Damage, (DamageType) weapon.DamageType, (Stats) weapon.ScalingStat, weapon.Scaling,
+                    target, weapon.Damage, (DamageType)weapon.DamageType, (Stats)weapon.ScalingStat, weapon.Scaling,
                     weapon.CritChance, weapon.CritMultiplier, null, null, weapon
                 );
             }

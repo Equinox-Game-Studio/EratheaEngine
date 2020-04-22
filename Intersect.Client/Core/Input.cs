@@ -27,13 +27,13 @@ namespace Intersect.Client.Core
 
         public static void OnKeyPressed(Keys key)
         {
+            Console.WriteLine("gay, what the fuck is going on");
             if (key == Keys.None)
             {
                 return;
             }
 
             var consumeKey = false;
-
             KeyDown?.Invoke(key);
             switch (key)
             {
