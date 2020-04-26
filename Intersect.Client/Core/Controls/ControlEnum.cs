@@ -12,7 +12,9 @@
 
         MoveRight,
 
-        AttackInteract,
+        Attack,
+
+        Interact,
 
         Block,
 

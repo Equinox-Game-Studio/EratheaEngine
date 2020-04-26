@@ -157,7 +157,7 @@ namespace Intersect.Client.Entities
                     ProcessDirectionalInput();
                 }
 
-                if (Controls.KeyDown(Control.AttackInteract))
+                if (Controls.KeyDown(Control.Attack))
                 {
                     if (!Globals.Me.TryAttack())
                     {

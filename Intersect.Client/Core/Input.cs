@@ -112,9 +112,10 @@ namespace Intersect.Client.Core
                                     case Control.MoveRight:
                                         break;
 
-                                    case Control.AttackInteract:
+                                    case Control.Attack:
                                         break;
-
+                                    case Control.Interact:
+                                        break;
                                     case Control.Block:
                                         Globals.Me?.TryBlock();
 
