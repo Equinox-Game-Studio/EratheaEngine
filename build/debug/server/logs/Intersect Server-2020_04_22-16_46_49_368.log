@@ -1,0 +1,62 @@
+﻿2020-04-22 20:46:49.448 [Debug] Loaded new formula from BaseExp * Power(Gain, Level).
+
+--------------------------------------------------------------------------------
+2020-04-22 20:46:49.612 [Warn] 
+  Message: Missing configuration file.
+    Stack:    at Intersect.Configuration.ConfigurationHelper.Load[T](T configuration, String filePath, Boolean failQuietly) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect (Core)\Configuration\ConfigurationHelper.cs:line 24
+   at Intersect.Server.Web.RestApi.Configuration.ApiConfiguration.Load(String filePath, Boolean failQuietly) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Server\Web\RestApi\Configuration\ApiConfiguration.cs:line 183
+   at Intersect.Configuration.ConfigurationHelper.LoadSafely[T](T configuration, String filePath) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect (Core)\Configuration\ConfigurationHelper.cs:line 85
+
+
+--------------------------------------------------------------------------------
+Listening on 0.0.0.0:5400.
+
+--------------------------------------------------------------------------------
+UPnP Service Initialization Succeeded
+
+--------------------------------------------------------------------------------
+Successfully auto port forwarded udp port 5400 using UPnP.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.113 [Info] Acquiring context lock... (0ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.113 [Info] Acquired. (0ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.113 [Info] Beginning context dispose. (0ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.115 [Info] Disposing network... (0ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.116 [Info] Saving player database... (2ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.117 [Info] Saving game database... (3ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.117 [Info] Shutting down the API... (3ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.118 [Info] Base dispose. (3ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.118 [Info] Finished disposing server context. (4ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.118 [Info] GC.SuppressFinalize (4ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.118 [Info] InternalDispose() completed. (4ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.118 [Info] Clearing instance... (5ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.118 [Info] Releasing context lock... (5ms)
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:39.118 [Info] Released. (5ms)
+
+--------------------------------------------------------------------------------

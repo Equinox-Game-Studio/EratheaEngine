@@ -1,0 +1,39 @@
+﻿2020-04-26 03:59:08.914 [Info] Connecting to 127.0.0.1:5400...
+
+--------------------------------------------------------------------------------
+2020-04-26 03:59:15.446 [Info] Connection approved [00000000-0000-0000-0000-000000000000].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:59:15.459 [Debug] Connection established to remote [00000000-0000-0000-0000-000000000000/127.0.0.1:5400].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:59:15.459 [Info] Connected [00000000-0000-0000-0000-000000000000].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:59:17.773 [Warn] 'Me' is null.
+
+--------------------------------------------------------------------------------
+2020-04-26 03:59:21.290 [Error] 
+  Message: Input string was not in a correct format.
+    Stack:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Byte.Parse(String s, NumberStyles style, NumberFormatInfo info)
+   at Intersect.Client.Interface.Game.Chat.Chatbox.TrySendMessage() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Interface\Game\Chat\Chatbox.cs:line 216
+   at Intersect.Client.Interface.Game.Chat.Chatbox.ChatBoxInput_SubmitPressed(Base sender, EventArgs arguments) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Interface\Game\Chat\Chatbox.cs:line 185
+   at Intersect.Client.Framework.Gwen.Control.TextBox.OnReturn() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\TextBox.cs:line 734
+   at Intersect.Client.Framework.Gwen.Control.TextBox.OnKeyReturn(Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\TextBox.cs:line 378
+   at Intersect.Client.Framework.Gwen.Control.Base.OnKeyPressed(Key key, Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\Base.cs:line 2731
+   at Intersect.Client.Framework.Gwen.Control.Base.InputKeyPressed(Key key, Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\Base.cs:line 2787
+   at Intersect.Client.Framework.Gwen.Input.InputHandler.OnKeyEvent(Base canvas, Key key, Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Input\InputHandler.cs:line 443
+   at Intersect.Client.Framework.Gwen.Control.Canvas.Input_Key(Key key, Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\Canvas.cs:line 316
+   at Intersect.Client.Framework.Gwen.Input.IntersectInput.ProcessMessage(Object message) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Input\IntersectInput.cs:line 135
+   at Intersect.Client.MonoGame.Input.MonoInput.Update() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\MonoGame\Input\MonoInput.cs:line 200
+   at Intersect.Client.Core.Main.Update() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Main.cs:line 107
+   at Intersect.Client.MonoGame.IntersectGame.Update(GameTime gameTime) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\MonoGame\IntersectGame.cs:line 119
+   at Microsoft.Xna.Framework.Game.DoUpdate(GameTime gameTime)
+   at Microsoft.Xna.Framework.Game.Tick()
+   at Microsoft.Xna.Framework.SdlGamePlatform.RunLoop()
+   at Microsoft.Xna.Framework.Game.Run(GameRunBehavior runBehavior)
+
+
+--------------------------------------------------------------------------------

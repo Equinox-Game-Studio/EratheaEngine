@@ -1,0 +1,109 @@
+﻿2020-04-22 20:47:05.819 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:47:13.336 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:47:41.410 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:47:44.003 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:47:45.929 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:47:47.572 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:27.509 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:50.659 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:48:55.879 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:49:02.092 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:49:32.778 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:52:07.366 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-22 20:52:47.100 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-26 03:05:40.819 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-26 03:06:48.637 [Error] The resources directory could not be found! Intersect will now close.
+
+--------------------------------------------------------------------------------
+2020-04-26 03:59:21.302 [Error] 
+  Message: Input string was not in a correct format.
+    Stack:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Byte.Parse(String s, NumberStyles style, NumberFormatInfo info)
+   at Intersect.Client.Interface.Game.Chat.Chatbox.TrySendMessage() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Interface\Game\Chat\Chatbox.cs:line 216
+   at Intersect.Client.Interface.Game.Chat.Chatbox.ChatBoxInput_SubmitPressed(Base sender, EventArgs arguments) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Interface\Game\Chat\Chatbox.cs:line 185
+   at Intersect.Client.Framework.Gwen.Control.TextBox.OnReturn() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\TextBox.cs:line 734
+   at Intersect.Client.Framework.Gwen.Control.TextBox.OnKeyReturn(Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\TextBox.cs:line 378
+   at Intersect.Client.Framework.Gwen.Control.Base.OnKeyPressed(Key key, Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\Base.cs:line 2731
+   at Intersect.Client.Framework.Gwen.Control.Base.InputKeyPressed(Key key, Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\Base.cs:line 2787
+   at Intersect.Client.Framework.Gwen.Input.InputHandler.OnKeyEvent(Base canvas, Key key, Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Input\InputHandler.cs:line 443
+   at Intersect.Client.Framework.Gwen.Control.Canvas.Input_Key(Key key, Boolean down) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Control\Canvas.cs:line 316
+   at Intersect.Client.Framework.Gwen.Input.IntersectInput.ProcessMessage(Object message) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client.Framework\Gwen\Input\IntersectInput.cs:line 135
+   at Intersect.Client.MonoGame.Input.MonoInput.Update() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\MonoGame\Input\MonoInput.cs:line 200
+   at Intersect.Client.Core.Main.Update() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Main.cs:line 107
+   at Intersect.Client.MonoGame.IntersectGame.Update(GameTime gameTime) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\MonoGame\IntersectGame.cs:line 119
+   at Microsoft.Xna.Framework.Game.DoUpdate(GameTime gameTime)
+   at Microsoft.Xna.Framework.Game.Tick()
+   at Microsoft.Xna.Framework.SdlGamePlatform.RunLoop()
+   at Microsoft.Xna.Framework.Game.Run(GameRunBehavior runBehavior)
+
+
+--------------------------------------------------------------------------------
+2020-04-26 04:08:46.964 [Error] 
+  Message: The given key was not present in the dictionary.
+    Stack:    at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Intersect.Client.Core.Controls.Controls..ctor(Controls gameControls) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Controls\Controls.cs:line 40
+   at Intersect.Client.Core.Controls.Controls.Init() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Controls\Controls.cs:line 105
+   at Intersect.Client.MonoGame.IntersectGame..ctor() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\MonoGame\IntersectGame.cs:line 72
+
+
+--------------------------------------------------------------------------------
+2020-04-26 04:08:51.846 [Error] 
+  Message: The given key was not present in the dictionary.
+    Stack:    at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Intersect.Client.Core.Controls.Controls..ctor(Controls gameControls) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Controls\Controls.cs:line 40
+   at Intersect.Client.Core.Controls.Controls.Init() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Controls\Controls.cs:line 105
+   at Intersect.Client.MonoGame.IntersectGame..ctor() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\MonoGame\IntersectGame.cs:line 72
+
+
+--------------------------------------------------------------------------------
+2020-04-26 04:08:58.033 [Error] 
+  Message: The given key was not present in the dictionary.
+    Stack:    at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Intersect.Client.Core.Controls.Controls..ctor(Controls gameControls) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Controls\Controls.cs:line 40
+   at Intersect.Client.Core.Controls.Controls.Init() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Controls\Controls.cs:line 105
+   at Intersect.Client.MonoGame.IntersectGame..ctor() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\MonoGame\IntersectGame.cs:line 72
+
+
+--------------------------------------------------------------------------------
+2020-04-26 04:09:03.166 [Error] 
+  Message: The given key was not present in the dictionary.
+    Stack:    at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Intersect.Client.Core.Controls.Controls..ctor(Controls gameControls) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Controls\Controls.cs:line 40
+   at Intersect.Client.Core.Controls.Controls.Init() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\Core\Controls\Controls.cs:line 105
+   at Intersect.Client.MonoGame.IntersectGame..ctor() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Client\MonoGame\IntersectGame.cs:line 72
+
+
+--------------------------------------------------------------------------------

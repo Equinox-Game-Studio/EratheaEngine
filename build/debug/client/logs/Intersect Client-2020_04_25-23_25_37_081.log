@@ -1,0 +1,50 @@
+﻿2020-04-26 03:25:37.100 [Warn] 
+  Message: Missing configuration file.
+    Stack:    at Intersect.Configuration.ConfigurationHelper.Load[T](T configuration, String filePath, Boolean failQuietly) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect (Core)\Configuration\ConfigurationHelper.cs:line 24
+   at Intersect.Configuration.ClientConfiguration.Load(String filePath, Boolean failQuietly) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect (Core)\Configuration\ClientConfiguration.cs:line 23
+   at Intersect.Configuration.ConfigurationHelper.LoadSafely[T](T configuration, String filePath) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect (Core)\Configuration\ConfigurationHelper.cs:line 85
+
+
+--------------------------------------------------------------------------------
+2020-04-26 03:25:37.936 [Info] Connecting to 127.0.0.1:5400...
+
+--------------------------------------------------------------------------------
+2020-04-26 03:25:38.228 [Info] Connection approved [00000000-0000-0000-0000-000000000000].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:25:38.252 [Debug] Connection established to remote [00000000-0000-0000-0000-000000000000/127.0.0.1:5400].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:25:38.253 [Info] Connected [00000000-0000-0000-0000-000000000000].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:26:22.201 [Debug] StatusChanged: [NetIncomingMessage #0 10 bytes] [Disconnected]
+
+--------------------------------------------------------------------------------
+2020-04-26 03:26:22.201 [Debug] Connectioned terminated to remote [00000000-0000-0000-0000-000000000000/127.0.0.1:5400].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:26:22.201 [Info] Disconnected [00000000-0000-0000-0000-000000000000].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:26:22.230 [Info] Connecting to 127.0.0.1:5400...
+
+--------------------------------------------------------------------------------
+2020-04-26 03:26:34.746 [Info] Connection approved [00000000-0000-0000-0000-000000000000].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:26:34.752 [Debug] Connection established to remote [00000000-0000-0000-0000-000000000000/127.0.0.1:5400].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:26:34.752 [Info] Connected [00000000-0000-0000-0000-000000000000].
+
+--------------------------------------------------------------------------------
+2020-04-26 03:27:15.577 [Warn] 'Me' is null.
+
+--------------------------------------------------------------------------------
+2020-04-26 03:27:43.142 [Debug] StatusChanged: [NetIncomingMessage #80 10 bytes] [Disconnecting]
+
+--------------------------------------------------------------------------------
+2020-04-26 03:27:43.145 [Debug] StatusChanged: [NetIncomingMessage #81 10 bytes] [Disconnected]
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,16 @@
+﻿2020-05-02 05:36:02.338 [Error] Received unhandled exception from .
+
+--------------------------------------------------------------------------------
+2020-05-02 05:36:02.342 [Error] 
+  Message: The handle is invalid.
+
+    Stack:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.Console.GetBufferInfo(Boolean throwOnNoConsole, Boolean& succeeded)
+   at System.Console.Clear()
+   at Intersect.Console.Clear() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect (Core)\Console.cs:line 424
+   at Intersect.Server.Core.Bootstrapper.PrintIntroduction() in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Server\Core\Bootstrapper.cs:line 248
+   at Intersect.Server.Core.Bootstrapper.PreContextSetup(String[] args) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Server\Core\Bootstrapper.cs:line 209
+   at Intersect.Server.Core.Bootstrapper.Start(String[] args) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Server\Core\Bootstrapper.cs:line 46
+
+
+--------------------------------------------------------------------------------
