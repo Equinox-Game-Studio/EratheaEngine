@@ -83,7 +83,7 @@ namespace Intersect.Client.Core.Controls
             CreateControlMap(Control.OpenQuests, Keys.L, Keys.None);
             CreateControlMap(Control.OpenCharacterInfo, Keys.C, Keys.None);
             CreateControlMap(Control.OpenParties, Keys.P, Keys.None);
-            CreateControlMap(Control.OpenSpells, Keys.X, Keys.None);
+            CreateControlMap(Control.OpenSpells, Keys.U, Keys.None);
             CreateControlMap(Control.OpenFriends, Keys.F, Keys.None);
             CreateControlMap(Control.OpenSettings, Keys.None, Keys.None);
             CreateControlMap(Control.OpenDebugger, Keys.F2, Keys.None);
