@@ -170,58 +170,7 @@ namespace Intersect.Client.Entities
                 }
 
                 if (Controls.KeyDown(Control.Interact)) {
-                    Log.Warn("Interact Pressed!!!");
-
-                    int x = Globals.Me.X;
-                    int y = Globals.Me.Y;
-                    var map = Globals.Me.CurrentMap;
-                    switch (Globals.Me.Dir)
-                    {
-                        case 0:
-                            y--;
-
-                            break;
-                        case 1:
-                            y++;
-
-                            break;
-                        case 2:
-                            x--;
-
-                            break;
-                        case 3:
-                            x++;
-
-                            break;
-                    }
-
-
-
-                    foreach (MapInstance eventMap in MapInstance.Lookup.Values)
-                    {
-                        foreach (var en in eventMap.LocalEntities)
-                        {
-                            if (en.Value == null)
-                            {
-                                continue;
-                            }
-
-                            if (en.Value.CurrentMap == map && en.Value.X == x && en.Value.Y == y)
-                            {
-                                if (en.Value.GetType() == typeof(Event))
-                                {
-                                    // Talk to Event
-                                    PacketSender.SendActivateEvent(en.Key);
-                                    AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
-
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-
-
-
+                    Interact();   
                 }
 
             }
@@ -1017,6 +966,53 @@ namespace Intersect.Client.Entities
             }
         }
 
+        public void Interact() {
+            int x = Globals.Me.X;
+            int y = Globals.Me.Y;
+            var map = Globals.Me.CurrentMap;
+
+            switch (Globals.Me.Dir)
+            {
+                case 0:
+                    y--;
+
+                    break;
+                case 1:
+                    y++;
+
+                    break;
+                case 2:
+                    x--;
+
+                    break;
+                case 3:
+                    x++;
+
+                    break;
+            }
+
+            foreach (MapInstance eventMap in MapInstance.Lookup.Values)
+            {
+                foreach (var en in eventMap.LocalEntities)
+                {
+                    if (en.Value == null)
+                    {
+                        continue;
+                    }
+
+                    if (en.Value.CurrentMap == map && en.Value.X == x && en.Value.Y == y)
+                    {
+                        if (en.Value.GetType() == typeof(Event))
+                        {
+                            // Talk to Event
+                            PacketSender.SendActivateEvent(en.Key);
+                            AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
+                        }
+                    }
+                }
+            }
+        }
+
         public bool TryAttack()
         {
             if (AttackTimer > Globals.System.GetTimeMs() || Blocking)
@@ -1074,29 +1070,6 @@ namespace Intersect.Client.Entities
                     }
                 }
             }
-
-            //foreach (MapInstance eventMap in MapInstance.Lookup.Values)
-            //{
-            //    foreach (var en in eventMap.LocalEntities)
-            //    {
-            //        if (en.Value == null)
-            //        {
-            //            continue;
-            //        }
-
-            //        if (en.Value.CurrentMap == map && en.Value.X == x && en.Value.Y == y)
-            //        {
-            //            if (en.Value.GetType() == typeof(Event))
-            //            {
-            //                //Talk to Event
-            //                PacketSender.SendActivateEvent(en.Key);
-            //                AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
-
-            //                return true;
-            //            }
-            //        }
-            //    }
-            //}
 
             //Projectile/empty swing for animations
             PacketSender.SendAttack(Guid.Empty);
