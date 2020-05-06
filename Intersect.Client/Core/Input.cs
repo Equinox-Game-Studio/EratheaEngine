@@ -33,7 +33,6 @@ namespace Intersect.Client.Core
             }
 
             var consumeKey = false;
-
             KeyDown?.Invoke(key);
             switch (key)
             {
@@ -112,9 +111,11 @@ namespace Intersect.Client.Core
                                     case Control.MoveRight:
                                         break;
 
-                                    case Control.AttackInteract:
+                                    case Control.Attack:
                                         break;
-
+                                    case Control.Interact:
+                                        //Log.Warn("Pressing Interact Button");
+                                        break;
                                     case Control.Block:
                                         Globals.Me?.TryBlock();
 

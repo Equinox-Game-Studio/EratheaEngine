@@ -14,6 +14,7 @@ using Intersect.Client.Networking;
 using Intersect.Enums;
 using Intersect.GameObjects;
 using Intersect.GameObjects.Maps;
+using Intersect.Logging;
 using Intersect.Network.Packets.Server;
 
 using Newtonsoft.Json;
@@ -157,7 +158,7 @@ namespace Intersect.Client.Entities
                     ProcessDirectionalInput();
                 }
 
-                if (Controls.KeyDown(Control.AttackInteract))
+                if (Controls.KeyDown(Control.Attack))
                 {
                     if (!Globals.Me.TryAttack())
                     {
@@ -167,6 +168,11 @@ namespace Intersect.Client.Entities
                         }
                     }
                 }
+
+                if (Controls.KeyDown(Control.Interact)) {
+                    Interact();   
+                }
+
             }
 
             if (TargetBox != null)
@@ -960,12 +966,61 @@ namespace Intersect.Client.Entities
             }
         }
 
+        public void Interact() {
+            int x = Globals.Me.X;
+            int y = Globals.Me.Y;
+            var map = Globals.Me.CurrentMap;
+
+            switch (Globals.Me.Dir)
+            {
+                case 0:
+                    y--;
+
+                    break;
+                case 1:
+                    y++;
+
+                    break;
+                case 2:
+                    x--;
+
+                    break;
+                case 3:
+                    x++;
+
+                    break;
+            }
+
+            foreach (MapInstance eventMap in MapInstance.Lookup.Values)
+            {
+                foreach (var en in eventMap.LocalEntities)
+                {
+                    if (en.Value == null)
+                    {
+                        continue;
+                    }
+
+                    if (en.Value.CurrentMap == map && en.Value.X == x && en.Value.Y == y)
+                    {
+                        if (en.Value.GetType() == typeof(Event))
+                        {
+                            // Talk to Event
+                            PacketSender.SendActivateEvent(en.Key);
+                            AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
+                        }
+                    }
+                }
+            }
+        }
+
         public bool TryAttack()
         {
             if (AttackTimer > Globals.System.GetTimeMs() || Blocking)
             {
                 return false;
             }
+
+
 
             int x = Globals.Me.X;
             int y = Globals.Me.Y;
@@ -1008,29 +1063,6 @@ namespace Intersect.Client.Entities
                         {
                             //ATTACKKKKK!!!
                             PacketSender.SendAttack(en.Key);
-                            AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
-
-                            return true;
-                        }
-                    }
-                }
-            }
-
-            foreach (MapInstance eventMap in MapInstance.Lookup.Values)
-            {
-                foreach (var en in eventMap.LocalEntities)
-                {
-                    if (en.Value == null)
-                    {
-                        continue;
-                    }
-
-                    if (en.Value.CurrentMap == map && en.Value.X == x && en.Value.Y == y)
-                    {
-                        if (en.Value.GetType() == typeof(Event))
-                        {
-                            //Talk to Event
-                            PacketSender.SendActivateEvent(en.Key);
                             AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
 
                             return true;

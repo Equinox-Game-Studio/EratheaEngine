@@ -1,0 +1,682 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect Core</name>
+    </assembly>
+    <members>
+        <member name="M:Intersect.Collections.SingleOrList`1.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.Add(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.Contains(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.CopyTo(`0[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.Remove(`0)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Collections.SingleOrList`1.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Collections.SingleOrList`1.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.IndexOf(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.Insert(System.Int32,`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Collections.SingleOrList`1.RemoveAt(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Collections.SingleOrList`1.Item(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Configuration.IConfigurable`1">
+            <summary>
+            Base interface for configurable objects
+            </summary>
+            <typeparam name="TConfiguration">Configuration type</typeparam>
+        </member>
+        <member name="P:Intersect.Configuration.IConfigurable`1.Configuration">
+            <summary>
+            The configuration instance for this object
+            </summary>
+        </member>
+        <member name="T:Intersect.Configuration.IConfiguration`1">
+            <summary>
+            Base interface for configuration structures
+            </summary>
+            <typeparam name="TConfiguration">Configuration type</typeparam>
+        </member>
+        <member name="M:Intersect.Configuration.IConfiguration`1.Load(System.String,System.Boolean)">
+            <summary>
+            Loads configuration into this instance from the specified file.
+            </summary>
+            <param name="filePath">the file to load from</param>
+            <param name="failQuietly">do not throw an exception if an error is encountered, default false</param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Configuration.IConfiguration`1.Save(System.String,System.Boolean)">
+            <summary>
+            Persists configuration from this instance into the specified file.
+            </summary>
+            <param name="filePath">the file to save to</param>
+            <param name="failQuietly">do not throw an exception if an error is encountered, default false</param>
+            <returns></returns>
+        </member>
+        <member name="T:Intersect.Configuration.ClientConfiguration">
+            <inheritdoc />
+            <summary>
+            Client configuration options
+            </summary>
+        </member>
+        <member name="M:Intersect.Configuration.ClientConfiguration.Load(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Configuration.ClientConfiguration.Save(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.Host">
+            <summary>
+            Hostname of the server to connect to
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.Port">
+            <summary>
+            Port of the server to connect to
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.GameFont">
+            <summary>
+            The font family to use on misc non-ui rendering
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.EntityNameFont">
+            <summary>
+            The font family to use on entity names
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.ChatBubbleFont">
+            <summary>
+            The font family to use on chat bubbles
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.ActionMsgFont">
+            <summary>
+            The font family to use on action messages
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.UIFont">
+            <summary>
+            The font family to use on unstyled windows such as the debug menu/admin window
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.ChatLines">
+            <summary>
+            Number of lines to save for chat scrollback
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.MenuMusic">
+            <summary>
+            Menu music file name
+            </summary>
+        </member>
+        <member name="P:Intersect.Configuration.ClientConfiguration.MenuBackground">
+            <summary>
+            Menu background art
+            </summary>
+        </member>
+        <member name="M:Intersect.Core.ExperimentalFeatures.ExperimentalFlag.Equals(Intersect.Core.ExperimentalFeatures.IExperimentalFlag)">
+            <inheritdoc cref="T:System.IEquatable`1" />
+        </member>
+        <member name="M:Intersect.Core.ExperimentalFeatures.ExperimentalFlag.op_Implicit(Intersect.Core.ExperimentalFeatures.ExperimentalFlag)~System.Boolean">
+            <summary>
+            
+            </summary>
+            <param name="flag"></param>
+        </member>
+        <member name="P:Intersect.Core.ExperimentalFeatures.ExperimentalFlagAlias.Guid">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Core.ExperimentalFeatures.ExperimentalFlagAlias.Enabled">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ExperimentalFeatures.ExperimentalFlagAlias.Equals(Intersect.Core.ExperimentalFeatures.IExperimentalFlag)">
+            <inheritdoc cref="T:System.IEquatable`1" />
+        </member>
+        <member name="M:Intersect.Core.ExperimentalFeatures.ExperimentalFlagAlias.With(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ExperimentalFeatures.ExperimentalFlagConverter.WriteJson(Newtonsoft.Json.JsonWriter,Intersect.Core.ExperimentalFeatures.ExperimentalFlag,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ExperimentalFeatures.ExperimentalFlagConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,Intersect.Core.ExperimentalFeatures.ExperimentalFlag,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Core.ExperimentalFeatures.IExperimentalFlag.With(System.Boolean)">
+            <summary>
+            Creates a clone of this <see cref="T:Intersect.Core.ExperimentalFeatures.IExperimentalFlag"/> with the given enablement.
+            </summary>
+            <param name="enabled">the new enablement state</param>
+            <returns>a clone of this flag with the new enablement state</returns>
+        </member>
+        <member name="P:Intersect.Console.InputEncoding">
+            <summary>Gets or sets the encoding the console uses to read input. </summary>
+            <returns>The encoding used to read console input.</returns>
+            <exception cref="T:System.ArgumentNullException">The property value in a set operation is <see langword="null" />.</exception>
+            <exception cref="T:System.IO.IOException">An error occurred during the execution of this operation.</exception>
+            <exception cref="T:System.Security.SecurityException">Your application does not have permission to perform this operation.</exception>
+        </member>
+        <member name="P:Intersect.Console.OutputEncoding">
+            <summary>Gets or sets the encoding the console uses to write output. </summary>
+            <returns>The encoding used to write console output.</returns>
+            <exception cref="T:System.ArgumentNullException">The property value in a set operation is <see langword="null" />.</exception>
+            <exception cref="T:System.IO.IOException">An error occurred during the execution of this operation.</exception>
+            <exception cref="T:System.Security.SecurityException">Your application does not have permission to perform this operation.</exception>
+        </member>
+        <member name="M:Intersect.Console.Beep">
+            <summary>Plays the sound of a beep through the console speaker.</summary>
+            <exception cref="T:System.Security.HostProtectionException">This method was executed on a server, such as SQL Server, that does not permit access to a user interface.</exception>
+        </member>
+        <member name="M:Intersect.Console.Beep(System.Int32,System.Int32)">
+            <summary>Plays the sound of a beep of a specified frequency and duration through the console speaker.</summary>
+            <param name="frequency">The frequency of the beep, ranging from 37 to 32767 hertz.</param>
+            <param name="duration">The duration of the beep measured in milliseconds.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="frequency" /> is less than 37 or more than 32767 hertz.-or-
+            <paramref name="duration" /> is less than or equal to zero.</exception>
+            <exception cref="T:System.Security.HostProtectionException">This method was executed on a server, such as SQL Server, that does not permit access to the console.</exception>
+        </member>
+        <member name="P:Intersect.Console.KeyAvailable">
+            <summary>Gets a value indicating whether a key press is available in the input stream.</summary>
+            <returns>
+            <see langword="true" /> if a key press is available; otherwise, <see langword="false" />.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+            <exception cref="T:System.InvalidOperationException">Standard input is redirected to a file instead of the keyboard. </exception>
+        </member>
+        <member name="P:Intersect.Console.NumberLock">
+            <summary>Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.</summary>
+            <returns>
+            <see langword="true" /> if NUM LOCK is turned on; <see langword="false" /> if NUM LOCK is turned off.</returns>
+        </member>
+        <member name="P:Intersect.Console.CapsLock">
+            <summary>Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.</summary>
+            <returns>
+            <see langword="true" /> if CAPS LOCK is turned on; <see langword="false" /> if CAPS LOCK is turned off.</returns>
+        </member>
+        <member name="P:Intersect.Console.TreatControlCAsInput">
+            <summary>Gets or sets a value indicating whether the combination of the <see cref="F:System.ConsoleModifiers.Control" /> modifier key and <see cref="F:System.ConsoleKey.C" /> console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.</summary>
+            <returns>
+            <see langword="true" /> if Ctrl+C is treated as ordinary input; otherwise, <see langword="false" />.</returns>
+            <exception cref="T:System.IO.IOException">Unable to get or set the input mode of the console input buffer. </exception>
+        </member>
+        <member name="E:Intersect.Console.CancelKeyPress">
+            <summary>Occurs when the <see cref="F:System.ConsoleModifiers.Control" /> modifier key (Ctrl) and either the <see cref="F:System.ConsoleKey.C" /> console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).</summary>
+        </member>
+        <member name="M:Intersect.Console.Read">
+            <summary>Reads the next character from the standard input stream.</summary>
+            <returns>The next character from the input stream, or negative one (-1) if there are currently no more characters to be read.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.ReadLine">
+            <summary>Reads the next line of characters from the standard input stream.</summary>
+            <returns>The next line of characters from the input stream, or <see langword="null" /> if no more lines are available.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+            <exception cref="T:System.OutOfMemoryException">There is insufficient memory to allocate a buffer for the returned string. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The number of characters in the next line of characters is greater than <see cref="F:System.Int32.MaxValue" />.</exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine">
+            <summary>Writes the current line terminator to the standard output stream.</summary>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.String,System.Object[])">
+            <summary>Writes the text representation of the specified array of objects, followed by the current line terminator, to the standard output stream using the specified format information.</summary>
+            <param name="format">A composite format string (see Remarks).</param>
+            <param name="arg">An array of objects to write using <paramref name="format" />. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="format" /> or <paramref name="arg" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.FormatException">The format specification in <paramref name="format" /> is invalid. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Char[])">
+            <summary>Writes the specified array of Unicode characters, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="buffer">A Unicode character array. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes the specified subarray of Unicode characters, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="buffer">An array of Unicode characters. </param>
+            <param name="index">The starting position in <paramref name="buffer" />. </param>
+            <param name="count">The number of characters to write. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is less than zero. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index" /> plus <paramref name="count" /> specify a position that is not within <paramref name="buffer" />. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Boolean)">
+            <summary>Writes the text representation of the specified Boolean value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Char)">
+            <summary>Writes the specified Unicode character, followed by the current line terminator, value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Decimal)">
+            <summary>Writes the text representation of the specified <see cref="T:System.Decimal" /> value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Double)">
+            <summary>Writes the text representation of the specified double-precision floating-point value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Single)">
+            <summary>Writes the text representation of the specified single-precision floating-point value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Int32)">
+            <summary>Writes the text representation of the specified 32-bit signed integer value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.UInt32)">
+            <summary>Writes the text representation of the specified 32-bit unsigned integer value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Int64)">
+            <summary>Writes the text representation of the specified 64-bit signed integer value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.UInt64)">
+            <summary>Writes the text representation of the specified 64-bit unsigned integer value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.Object)">
+            <summary>Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.WriteLine(System.String)">
+            <summary>Writes the specified string value, followed by the current line terminator, to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.String,System.Object[])">
+            <summary>Writes the text representation of the specified array of objects to the standard output stream using the specified format information.</summary>
+            <param name="format">A composite format string (see Remarks).</param>
+            <param name="arg">An array of objects to write using <paramref name="format" />. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="format" /> or <paramref name="arg" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.FormatException">The format specification in <paramref name="format" /> is invalid. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Char[])">
+            <summary>Writes the specified array of Unicode characters to the standard output stream.</summary>
+            <param name="buffer">A Unicode character array. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Char[],System.Int32,System.Int32)">
+            <summary>Writes the specified subarray of Unicode characters to the standard output stream.</summary>
+            <param name="buffer">An array of Unicode characters. </param>
+            <param name="index">The starting position in <paramref name="buffer" />. </param>
+            <param name="count">The number of characters to write. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="index" /> or <paramref name="count" /> is less than zero. </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index" /> plus <paramref name="count" /> specify a position that is not within <paramref name="buffer" />. </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Boolean)">
+            <summary>Writes the text representation of the specified Boolean value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Char)">
+            <summary>Writes the specified Unicode character value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Double)">
+            <summary>Writes the text representation of the specified double-precision floating-point value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Decimal)">
+            <summary>Writes the text representation of the specified <see cref="T:System.Decimal" /> value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Single)">
+            <summary>Writes the text representation of the specified single-precision floating-point value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Int32)">
+            <summary>Writes the text representation of the specified 32-bit signed integer value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.UInt32)">
+            <summary>Writes the text representation of the specified 32-bit unsigned integer value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Int64)">
+            <summary>Writes the text representation of the specified 64-bit signed integer value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.UInt64)">
+            <summary>Writes the text representation of the specified 64-bit unsigned integer value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.Object)">
+            <summary>Writes the text representation of the specified object to the standard output stream.</summary>
+            <param name="value">The value to write, or <see langword="null" />. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.Write(System.String)">
+            <summary>Writes the specified string value to the standard output stream.</summary>
+            <param name="value">The value to write. </param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred. </exception>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardError">
+            <summary>Acquires the standard error stream.</summary>
+            <returns>The standard error stream.</returns>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardError(System.Int32)">
+            <summary>Acquires the standard error stream, which is set to a specified buffer size.</summary>
+            <param name="bufferSize">The internal stream buffer size. </param>
+            <returns>The standard error stream.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardInput">
+            <summary>Acquires the standard input stream.</summary>
+            <returns>The standard input stream.</returns>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardInput(System.Int32)">
+            <summary>Acquires the standard input stream, which is set to a specified buffer size.</summary>
+            <param name="bufferSize">The internal stream buffer size. </param>
+            <returns>The standard input stream.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardOutput">
+            <summary>Acquires the standard output stream.</summary>
+            <returns>The standard output stream.</returns>
+        </member>
+        <member name="M:Intersect.Console.OpenStandardOutput(System.Int32)">
+            <summary>Acquires the standard output stream, which is set to a specified buffer size.</summary>
+            <param name="bufferSize">The internal stream buffer size. </param>
+            <returns>The standard output stream.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="bufferSize" /> is less than or equal to zero. </exception>
+        </member>
+        <member name="P:Intersect.Console.IsInputRedirected">
+            <summary>Gets a value that indicates whether input has been redirected from the standard input stream.</summary>
+            <returns>
+            <see langword="true" /> if input is redirected; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="P:Intersect.Console.IsOutputRedirected">
+            <summary>Gets a value that indicates whether output has been redirected from the standard output stream.</summary>
+            <returns>
+            <see langword="true" /> if output is redirected; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="P:Intersect.Console.IsErrorRedirected">
+            <summary>Gets a value that indicates whether the error output stream has been redirected from the standard error stream.</summary>
+            <returns>
+            <see langword="true" /> if error output is redirected; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="P:Intersect.Console.In">
+            <summary>Gets the standard input stream.</summary>
+            <returns>A <see cref="T:System.IO.TextReader" /> that represents the standard input stream.</returns>
+        </member>
+        <member name="P:Intersect.Console.Out">
+            <summary>Gets the standard output stream.</summary>
+            <returns>A <see cref="T:System.IO.TextWriter" /> that represents the standard output stream.</returns>
+        </member>
+        <member name="P:Intersect.Console.Error">
+            <summary>Gets the standard error output stream.</summary>
+            <returns>A <see cref="T:System.IO.TextWriter" /> that represents the standard error output stream.</returns>
+        </member>
+        <member name="M:Intersect.Console.SetIn(System.IO.TextReader)">
+            <summary>Sets the <see cref="P:System.Console.In" /> property to the specified <see cref="T:System.IO.TextReader" /> object.</summary>
+            <param name="newIn">A stream that is the new standard input. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="newIn" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission. </exception>
+        </member>
+        <member name="M:Intersect.Console.SetOut(System.IO.TextWriter)">
+            <summary>Sets the <see cref="P:System.Console.Out" /> property to the specified <see cref="T:System.IO.TextWriter" /> object.</summary>
+            <param name="newOut">A stream that is the new standard output. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="newOut" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission. </exception>
+        </member>
+        <member name="M:Intersect.Console.SetError(System.IO.TextWriter)">
+            <summary>Sets the <see cref="P:System.Console.Error" /> property to the specified <see cref="T:System.IO.TextWriter" /> object.</summary>
+            <param name="newError">A stream that is the new standard error output. </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="newError" /> is <see langword="null" />. </exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission. </exception>
+        </member>
+        <member name="P:Intersect.GameObjects.Events.EventBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.Crafting.CraftBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.CraftingTableBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.AnimationBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.ClassBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.ItemBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.NpcBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.PlayerVariableBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.ProjectileBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.QuestBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.ResourceBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.ServerVariableBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.ShopBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.GameObjects.SpellBase.Folder">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.IO.FileSystem.FileSystemHelper.EnsureDirectoryExists(System.String)">
+            <summary>
+            Checks to see if the directory exists, and creates it otherwise.
+            </summary>
+            <param name="directoryPath">the directory path to check</param>
+            <returns>
+            <code>false</code> if the path is a file or creation fails
+            <code>true</code> if the path is a directory or creation succeeded
+            </returns>
+        </member>
+        <member name="M:Intersect.Logging.Formatting.DefaultFormatter.Format(Intersect.Logging.LogConfiguration,Intersect.Logging.LogLevel,System.DateTime,System.Exception,System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Logging.Microsoft.Extensions.Logging.IntersectLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Logging.Microsoft.Extensions.Logging.IntersectLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Logging.Microsoft.Extensions.Logging.IntersectLogger.BeginScope``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Logging.Microsoft.Extensions.Logging.IntersectLoggerFactory.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Logging.Microsoft.Extensions.Logging.IntersectLoggerFactory.CreateLogger(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Logging.Microsoft.Extensions.Logging.IntersectLoggerFactory.AddProvider(Microsoft.Extensions.Logging.ILoggerProvider)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Logging.Microsoft.Extensions.Logging.IntersectLogScope">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Logging.Microsoft.Extensions.Logging.IntersectLogScope.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Models.IFolderable.Folder">
+            <summary>
+            Used to group editor items together into folders with the same name
+            </summary>
+        </member>
+        <member name="M:Intersect.Network.CerasPacket.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Network.CerasPacket.Data">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Network.CerasPacket.Sanitize">
+            <inheritdoc />
+        </member>
+        <member name="F:Intersect.Network.TransmissionMode.All">
+            <summary>
+                Guarantees that all packets will be transmitted successfully
+                and will be received and processed in the order they are sent.
+            </summary>
+        </member>
+        <member name="F:Intersect.Network.TransmissionMode.Latest">
+            <summary>
+                Guarantees that all packets will be transmitted successfully
+                but any packets of the same type will be ignored if they
+                arrive after a newer packet of their type.
+            </summary>
+        </member>
+        <member name="F:Intersect.Network.TransmissionMode.Any">
+            <summary>
+                Makes no guarantees about anything.
+            </summary>
+        </member>
+        <member name="F:Intersect.Security.ApiVisibility.Public">
+            <summary>
+            Anyone has access.
+            </summary>
+        </member>
+        <member name="F:Intersect.Security.ApiVisibility.Restricted">
+            <summary>
+            Privileged users have access.
+            </summary>
+        </member>
+        <member name="F:Intersect.Security.ApiVisibility.Private">
+            <summary>
+            Data owners have access.
+            </summary>
+        </member>
+        <member name="F:Intersect.Security.ApiVisibility.Hidden">
+            <summary>
+            No users have access.
+            </summary>
+        </member>
+        <member name="M:Intersect.Utilities.GuidUtils.CreateNamed(System.Guid,System.String)">
+            <inheritdoc cref="M:Intersect.Utilities.GuidUtils.CreateNamed(System.Guid,System.Byte[])" />
+        </member>
+        <member name="M:Intersect.Utilities.GuidUtils.CreateNamed(System.Guid,System.Byte[])">
+            <summary>
+            Version 5 UUID implementation of RFC 4122 §4.3.
+            </summary>
+            <param name="namespaceId">the UUID of the namespace</param>
+            <param name="name">the name to generate the UUID for</param>
+            <returns>a Version 5 UUID generated from the provided namespace UUID and text name</returns>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.Next">
+            <summary>Returns a non-negative random integer.</summary>
+            <returns>A 32-bit signed integer that is greater than or equal to 0 and less than <see cref="F:System.Int32.MaxValue" />.</returns>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.Next(System.Int32,System.Int32)">
+            <summary>Returns a random integer that is within a specified range.</summary>
+            <param name="minValue">The inclusive lower bound of the random number returned.</param>
+            <param name="maxValue">The exclusive upper bound of the random number returned. <paramref name="maxValue" /> must be greater than or equal to <paramref name="minValue" />.</param>
+            <returns>A 32-bit signed integer greater than or equal to <paramref name="minValue" /> and less than <paramref name="maxValue" />; that is, the range of return values includes <paramref name="minValue" /> but not <paramref name="maxValue" />. If <paramref name="minValue" /> equals <paramref name="maxValue" />, <paramref name="minValue" /> is returned.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="minValue" /> is greater than <paramref name="maxValue" />.</exception>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.Next(System.Int32)">
+            <summary>Returns a non-negative random integer that is less than the specified maximum.</summary>
+            <param name="maxValue">The exclusive upper bound of the random number to be generated. <paramref name="maxValue" /> must be greater than or equal to 0.</param>
+            <returns>A 32-bit signed integer that is greater than or equal to 0, and less than <paramref name="maxValue" />; that is, the range of return values ordinarily includes 0 but not <paramref name="maxValue" />. However, if <paramref name="maxValue" /> equals 0, <paramref name="maxValue" /> is returned.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="maxValue" /> is less than 0.</exception>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.NextDouble">
+            <summary>Returns a random floating-point number that is greater than or equal to 0.0, and less than 1.0.</summary>
+            <returns>A double-precision floating point number that is greater than or equal to 0.0, and less than 1.0.</returns>
+        </member>
+        <member name="M:Intersect.Utilities.Randomization.NextBytes(System.Byte[])">
+            <summary>Fills the elements of a specified array of bytes with random numbers.</summary>
+            <param name="buffer">An array of bytes to contain random numbers.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="buffer" /> is <see langword="null" />.</exception>
+        </member>
+        <member name="P:Intersect.Options.Passability">
+            <summary>
+            Passability configuration by map zone
+            </summary>
+        </member>
+        <member name="T:Intersect.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

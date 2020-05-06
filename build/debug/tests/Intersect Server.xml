@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intersect Server</name>
+    </assembly>
+    <members>
+        <member name="T:Intersect.Server.Core.ServerTiming">
+            <summary>
+            Utility class for timing.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Core.ServerTiming.#ctor">
+            <summary>
+            Constructs a <code>ServerTiming</code> instance and starts the <see cref="P:Intersect.Server.Core.ServerTiming.Stopwatch"/>.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Core.ServerTiming.Stopwatch">
+            <summary>
+            The <see cref="T:System.Diagnostics.Stopwatch"/> instance used to keep track of time.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Core.ServerTiming.TimeMs">
+            <summary>
+            Gets the total elapsed time in milliseconds since this instance was created.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Core.ServerTiming.RealTimeMs">
+            <summary>
+            Gets the real-world unix time in milliseconds.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Core.Program">
+            <summary>
+            Please do not modify this without JC's approval! If namespaces are referenced that are not SYSTEM.* then the server won't run cross platform.
+            If you want to add startup instructions see Classes/ServerStart.cs
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.BadArgumentFormat">
+            <summary>
+            Argument matches neither the short nor long argument name format and is not positional.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.CommandNotFound">
+            <summary>
+            Command not found for the given name.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.DuplicateNamedArgument">
+            <summary>
+            Named argument was specified multiple times.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.FlagArgumentsIgnoreValue">
+            <summary>
+            Flag argument is provided a value, but they do not accept them.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.GenericError">
+            <summary>
+            Generic parser error message.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.IllegalArgumentFormat">
+             <summary>
+             Argument matches both the short and long argument name formats.
+            
+             Note that should not actually be possible.
+             </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.InvalidArgumentValue">
+            <summary>
+            The value provided is not valid for this argument.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.InvalidArgumentValueWithType">
+            <summary>
+            The value provided is not valid for this argument, expected one of the specified type.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.MissingArguments">
+            <summary>
+            Required arguments were missing.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.MissingArgumentsDelimeter">
+            <summary>
+            List delimeter for missing arguments.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.MissingNamedArgument">
+            <summary>
+            Named argument is required but missing for the given command.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.MissingPositionalArgument">
+            <summary>
+            Positional argument is required but missing for the given command.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.NoInput">
+            <summary>
+            No input was provided.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.UnhandledNamedArgument">
+            <summary>
+            Named argument is not valid for the given command.
+            </summary>
+        </member>
+        <member name="F:Intersect.Server.Core.CommandParsing.CommandParserErrorsNamespace.UnhandledPositionalArgument">
+            <summary>
+            Positional argument is not valid for the given command.
+            </summary>
+        </member>
+        <member name="T:Intersect.Server.Database.IntersectDbContext`1">
+            <summary>
+            Abstract DbContext class for all Intersect database contexts.
+            </summary>
+            <inheritdoc cref="T:Microsoft.EntityFrameworkCore.DbContext" />
+            <inheritdoc cref="T:Intersect.Server.Database.ISeedableContext" />
+        </member>
+        <member name="M:Intersect.Server.Database.IntersectDbContext`1.#ctor(System.Data.Common.DbConnectionStringBuilder,Intersect.Config.DatabaseOptions.DatabaseType,System.Boolean,Intersect.Logging.Logger,Intersect.Logging.LogLevel)">
+            <summary>
+            
+            </summary>
+            <param name="connectionStringBuilder"></param>
+            <param name="databaseType"></param>
+            <inheritdoc />
+        </member>
+        <member name="P:Intersect.Server.Database.IntersectDbContext`1.DatabaseType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Database.IntersectDbContext`1.ConnectionStringBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Database.IntersectDbContext`1.IsEmpty">
+            <summary>
+            Checks if the database is empty by checking if there are any tables.
+            </summary>
+            <returns>if the database is empty</returns>
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.LoggingContext.#ctor(System.Data.Common.DbConnectionStringBuilder,Intersect.Config.DatabaseOptions.DatabaseType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.Logging.RequestLog.Mapper.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Intersect.Server.Database.Logging.RequestLog})">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Database.MigrationBuilderExtensions.Sql(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder,System.ValueTuple{Intersect.Config.DatabaseOptions.DatabaseType,System.String}[])">
+            <summary>
+            
+            </summary>
+            <param name="migrationBuilder"></param>
+            <param name="conditionalQueries"></param>
+            <param name="suppressTransaction"></param>
+            <returns></returns>
+            <see cref="M:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.Sql(System.String,System.Boolean)"/>
+        </member>
+        <member name="M:Intersect.Server.Database.MigrationBuilderExtensions.Sql(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder,System.ValueTuple{Intersect.Config.DatabaseOptions.DatabaseType,System.String,System.Boolean}[])">
+            <summary>
+            
+            </summary>
+            <param name="migrationBuilder"></param>
+            <param name="conditionalQueries"></param>
+            <returns></returns>
+            <see cref="M:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.Sql(System.String,System.Boolean)"/>
+        </member>
+        <member name="M:Intersect.Server.Entities.Events.EventPageInstance.Move(System.Int32,Intersect.Server.Entities.Player,System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Entities.Pathfinding.SpatialAStar">
+            <summary>
+                Uses about 50 MB for a 1024x1024 grid.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.SpatialAStar.Search(Intersect.Point,Intersect.Point,Intersect.Server.Entities.Pathfinding.PathNode)">
+            <summary>
+                Returns null, if no path is found. Start- and End-Node are included in returned path. The user context
+                is passed to IsWalkable().
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.PriorityQueue`1.Push(`0)">
+            <summary>
+                Push an object onto the PQ
+            </summary>
+            <param name="item">The new object</param>
+            <returns>
+                The index in the list where the object is _now_. This will change when objects are taken from or put onto the
+                PQ.
+            </returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.PriorityQueue`1.Pop">
+            <summary>
+                Get the smallest object and remove it.
+            </summary>
+            <returns>The smallest object</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.PriorityQueue`1.Update(`0)">
+            <summary>
+                Notify the PQ that the object at position i has changed
+                and the PQ needs to restore order.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Entities.Pathfinding.PriorityQueue`1.Peek">
+            <summary>
+                Get the smallest object without removing it.
+            </summary>
+            <returns>The smallest object</returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Entity.CanMove(System.Int32)">
+            <summary>
+                Determines if this entity can move in the direction given.
+                Returns -5 if the tile is completely out of bounds.
+                Returns -3 if a tile is blocked because of a Z dimension tile
+                Returns -2 if a tile is blocked by a map attribute.
+                Returns -1 for clear.
+                Returns the type of entity that is blocking the way (if one exists)
+            </summary>
+            <param name="moveDir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Entities.Entity.CompareName(System.String,System.String)">
+            <summary>
+            Compares two player names, returning if they are equivalent.
+            </summary>
+            <param name="name">a name</param>
+            <param name="nameOther">a name to compare with</param>
+            <returns><code>false</code> if <code>null</code> or non-byte-equal ignoring case</returns>
+        </member>
+        <member name="M:Intersect.Server.Maps.TileHelper.#ctor(System.Guid,System.Int32,System.Int32)">
+            <summary>
+                Creates a new tile helper instance in a position given.
+            </summary>
+            <param name="mapId"></param>
+            <param name="tileX"></param>
+            <param name="tileY"></param>
+        </member>
+        <member name="M:Intersect.Server.Maps.TileHelper.Translate(System.Int32,System.Int32)">
+            <summary>
+                Moves our tile and then attempts to adjust the map location of we walked out of bounds. Will return true if the
+                position is valid. False if not.
+            </summary>
+            <param name="xOffset"></param>
+            <param name="yOffset"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Intersect.Server.Web.RestApi.Authentication.OAuth.IAppBuilderExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Authentication.OAuth.IAppBuilderExtensions.UseContentTypeMappingMiddleware(Owin.IAppBuilder,System.Collections.Generic.IDictionary{System.ValueTuple{Microsoft.Owin.PathString,System.String,System.String},Intersect.Server.Web.RestApi.Middleware.RequestMapFunc})">
+            <summary>
+            
+            </summary>
+            <param name="appBuilder"></param>
+            <param name="requestMap"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Intersect.Server.Web.RestApi.Authentication.OAuth.IOwinContextExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Authentication.OAuth.IOwinContextExtensions.ConvertFromJsonToFormBody(Microsoft.Owin.IOwinContext)">
+            <summary>
+            
+            </summary>
+            <param name="owinContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Intersect.Server.Web.RestApi.Authentication.OAuth.IOwinRequestExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Authentication.OAuth.IOwinRequestExtensions.JsonBodyToMap(Microsoft.Owin.IOwinRequest)">
+            <summary>
+            
+            </summary>
+            <param name="owinRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Authentication.OAuth.IOwinRequestExtensions.JsonBodyToEncodedParameterStrings(Microsoft.Owin.IOwinRequest)">
+            <summary>
+            
+            </summary>
+            <param name="owinRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Intersect.Server.Web.RestApi.Middleware.RequestMapFunc">
+            <summary>
+            
+            </summary>
+            <param name="owinContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Intersect.Server.Web.RestApi.Middleware.ContentTypeMappingMiddleware">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Middleware.ContentTypeMappingMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,System.Collections.Generic.IDictionary{System.ValueTuple{Microsoft.Owin.PathString,System.String,System.String},Intersect.Server.Web.RestApi.Middleware.RequestMapFunc})">
+            <inheritdoc />
+            <summary>
+            </summary>
+            <param name="next"></param>
+            <param name="requestMap"></param>
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Middleware.ContentTypeMappingMiddleware.Invoke(Microsoft.Owin.IOwinContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Middleware.IntersectRequestLoggingMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,Intersect.Logging.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Middleware.IntersectRequestLoggingMiddleware.Invoke(Microsoft.Owin.IOwinContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Middleware.IntersectThrottlingMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,WebApiThrottle.ThrottlePolicy,System.String,System.String,WebApiThrottle.IThrottleRepository)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Web.RestApi.Configuration.ApiConfiguration">
+            <inheritdoc />
+            <summary>
+            Configuration options for <see cref="T:Intersect.Server.Web.RestApi.RestApi" />.
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Configuration.ApiConfiguration.Load(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Configuration.ApiConfiguration.Save(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Constraints.AdminActionsConstraint.Match(System.Net.Http.HttpRequestMessage,System.Web.Http.Routing.IHttpRoute,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Web.Http.Routing.HttpRouteDirection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Logging.IntersectLogger.WriteCore(System.Diagnostics.TraceEventType,System.Int32,System.Object,System.Exception,System.Func{System.Object,System.Exception,System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Logging.IntersectLoggerFactory.Create(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Payloads.ChatMessage.Constraint.Match(System.Net.Http.HttpRequestMessage,System.Web.Http.Routing.IHttpRoute,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Web.Http.Routing.HttpRouteDirection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Payloads.LookupKey.Constraint.Match(System.Net.Http.HttpRequestMessage,System.Web.Http.Routing.IHttpRoute,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Web.Http.Routing.HttpRouteDirection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Web.RestApi.Serialization.ApiVisibilityContractResolver">
+            <inheritdoc />
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Web.RestApi.Serialization.ApiVisibilityContractResolver.RequestContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Serialization.ApiVisibilityContractResolver.GetSerializableMembers(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Services.AuthorizedRoutesService.RequiresAuthorization(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Services.IntersectServiceDependencyResolver.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Services.IntersectServiceDependencyResolver.GetService(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Services.IntersectServiceDependencyResolver.GetServices(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Intersect.Server.Web.RestApi.Services.IntersectServiceDependencyResolver.BeginScope">
+            <inheritdoc />
+        </member>
+        <member name="T:Intersect.Server.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Intersect.Server.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

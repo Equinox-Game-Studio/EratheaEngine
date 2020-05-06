@@ -25,6 +25,7 @@ namespace Intersect.Client.Core.Controls
                 {
                     CreateControlMap(mapping.Key, mapping.Value.Key1, mapping.Value.Key2);
                 }
+
             }
             else
             {
@@ -60,7 +61,8 @@ namespace Intersect.Client.Core.Controls
             CreateControlMap(Control.MoveDown, Keys.Down, Keys.S);
             CreateControlMap(Control.MoveLeft, Keys.Left, Keys.A);
             CreateControlMap(Control.MoveRight, Keys.Right, Keys.D);
-            CreateControlMap(Control.AttackInteract, Keys.E, Keys.LButton);
+            CreateControlMap(Control.Attack, Keys.Z, Keys.X);
+            CreateControlMap(Control.Interact, Keys.E, Keys.None);
             CreateControlMap(Control.Block, Keys.Q, Keys.RButton);
             CreateControlMap(Control.AutoTarget, Keys.Tab, Keys.None);
             CreateControlMap(Control.PickUp, Keys.Space, Keys.None);
@@ -81,7 +83,7 @@ namespace Intersect.Client.Core.Controls
             CreateControlMap(Control.OpenQuests, Keys.L, Keys.None);
             CreateControlMap(Control.OpenCharacterInfo, Keys.C, Keys.None);
             CreateControlMap(Control.OpenParties, Keys.P, Keys.None);
-            CreateControlMap(Control.OpenSpells, Keys.X, Keys.None);
+            CreateControlMap(Control.OpenSpells, Keys.U, Keys.None);
             CreateControlMap(Control.OpenFriends, Keys.F, Keys.None);
             CreateControlMap(Control.OpenSettings, Keys.None, Keys.None);
             CreateControlMap(Control.OpenDebugger, Keys.F2, Keys.None);
