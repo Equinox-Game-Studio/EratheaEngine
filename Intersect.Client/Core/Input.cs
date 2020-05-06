@@ -27,7 +27,6 @@ namespace Intersect.Client.Core
 
         public static void OnKeyPressed(Keys key)
         {
-            Console.WriteLine("gay, what the fuck is going on");
             if (key == Keys.None)
             {
                 return;
@@ -115,6 +114,7 @@ namespace Intersect.Client.Core
                                     case Control.Attack:
                                         break;
                                     case Control.Interact:
+                                        //Log.Warn("Pressing Interact Button");
                                         break;
                                     case Control.Block:
                                         Globals.Me?.TryBlock();

@@ -14,6 +14,7 @@ using Intersect.Client.Networking;
 using Intersect.Enums;
 using Intersect.GameObjects;
 using Intersect.GameObjects.Maps;
+using Intersect.Logging;
 using Intersect.Network.Packets.Server;
 
 using Newtonsoft.Json;
@@ -167,6 +168,62 @@ namespace Intersect.Client.Entities
                         }
                     }
                 }
+
+                if (Controls.KeyDown(Control.Interact)) {
+                    Log.Warn("Interact Pressed!!!");
+
+                    int x = Globals.Me.X;
+                    int y = Globals.Me.Y;
+                    var map = Globals.Me.CurrentMap;
+                    switch (Globals.Me.Dir)
+                    {
+                        case 0:
+                            y--;
+
+                            break;
+                        case 1:
+                            y++;
+
+                            break;
+                        case 2:
+                            x--;
+
+                            break;
+                        case 3:
+                            x++;
+
+                            break;
+                    }
+
+
+
+                    foreach (MapInstance eventMap in MapInstance.Lookup.Values)
+                    {
+                        foreach (var en in eventMap.LocalEntities)
+                        {
+                            if (en.Value == null)
+                            {
+                                continue;
+                            }
+
+                            if (en.Value.CurrentMap == map && en.Value.X == x && en.Value.Y == y)
+                            {
+                                if (en.Value.GetType() == typeof(Event))
+                                {
+                                    // Talk to Event
+                                    PacketSender.SendActivateEvent(en.Key);
+                                    AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
+
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+
+
+
+                }
+
             }
 
             if (TargetBox != null)
@@ -967,6 +1024,8 @@ namespace Intersect.Client.Entities
                 return false;
             }
 
+
+
             int x = Globals.Me.X;
             int y = Globals.Me.Y;
             var map = Globals.Me.CurrentMap;
@@ -1016,28 +1075,28 @@ namespace Intersect.Client.Entities
                 }
             }
 
-            foreach (MapInstance eventMap in MapInstance.Lookup.Values)
-            {
-                foreach (var en in eventMap.LocalEntities)
-                {
-                    if (en.Value == null)
-                    {
-                        continue;
-                    }
+            //foreach (MapInstance eventMap in MapInstance.Lookup.Values)
+            //{
+            //    foreach (var en in eventMap.LocalEntities)
+            //    {
+            //        if (en.Value == null)
+            //        {
+            //            continue;
+            //        }
 
-                    if (en.Value.CurrentMap == map && en.Value.X == x && en.Value.Y == y)
-                    {
-                        if (en.Value.GetType() == typeof(Event))
-                        {
-                            //Talk to Event
-                            PacketSender.SendActivateEvent(en.Key);
-                            AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
+            //        if (en.Value.CurrentMap == map && en.Value.X == x && en.Value.Y == y)
+            //        {
+            //            if (en.Value.GetType() == typeof(Event))
+            //            {
+            //                //Talk to Event
+            //                PacketSender.SendActivateEvent(en.Key);
+            //                AttackTimer = Globals.System.GetTimeMs() + CalculateAttackTime();
 
-                            return true;
-                        }
-                    }
-                }
-            }
+            //                return true;
+            //            }
+            //        }
+            //    }
+            //}
 
             //Projectile/empty swing for animations
             PacketSender.SendAttack(Guid.Empty);

@@ -1,5 +1,5 @@
 {
-  "Bounds": "423,303,520,162",
+  "Bounds": "140,219,520,162",
   "Padding": "0,0,0,0",
   "AlignmentEdgeDistances": "0,0,0,0",
   "AlignmentTransform": "0,0",
@@ -18,6 +18,9 @@
   "ToolTipFont": null,
   "ToolTipTextColor": "",
   "Texture": "event1.png",
+  "HoverSound": null,
+  "LeftMouseClickSound": null,
+  "RightMouseClickSound": null,
   "Children": {
     "EventFacePanel": {
       "Bounds": "16,14,80,80",
@@ -38,7 +41,10 @@
       "ToolTipBackground": null,
       "ToolTipFont": null,
       "ToolTipTextColor": "",
-      "Texture": ""
+      "Texture": "",
+      "HoverSound": null,
+      "LeftMouseClickSound": null,
+      "RightMouseClickSound": null
     },
     "EventDialogArea": {
       "Bounds": "106,14,402,80",
