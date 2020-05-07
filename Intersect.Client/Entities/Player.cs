@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Timers;
 using System.Collections.Generic;
-
+using System.Threading;
 using Intersect.Client.Core;
 using Intersect.Client.Core.Controls;
 using Intersect.Client.Entities.Events;
@@ -11,6 +12,7 @@ using Intersect.Client.Interface.Game.EntityPanel;
 using Intersect.Client.Localization;
 using Intersect.Client.Maps;
 using Intersect.Client.Networking;
+using Intersect.Client.Spells;
 using Intersect.Enums;
 using Intersect.GameObjects;
 using Intersect.GameObjects.Maps;
@@ -58,6 +60,17 @@ namespace Intersect.Client.Entities
         public Guid TargetIndex;
 
         public int TargetType;
+
+        // New stuff for the combo system.
+
+
+        public int ComboStage = 0;
+        //public int[] Z_Spells = new int[3]; // this will be triggered for X for now but you get the point
+        public int[] Z_Spells = {0, 1, 2}; // this will be triggered for X for now but you get the point
+
+        bool Pressed = false;
+
+
 
         public Player(Guid id, PlayerEntityPacket packet) : base(id, packet)
         {
@@ -150,23 +163,26 @@ namespace Intersect.Client.Entities
                 HandleInput();
             }
 
-
             if (!IsBusy())
             {
                 if (this == Globals.Me && IsMoving == false)
                 {
                     ProcessDirectionalInput();
                 }
-
+                
                 if (Controls.KeyDown(Control.Attack))
                 {
-                    if (!Globals.Me.TryAttack())
-                    {
-                        if (Globals.Me.AttackTimer < Globals.System.GetTimeMs())
-                        {
+                    if (Z_Spells[0] != null && Spells[0].SpellId != Guid.Empty && !IsSpellUsed(Z_Spells) && !Pressed) {
+                        if (ComboStage == 3) ComboStage = 0;
+                        Globals.Me.TryUseSpell(Z_Spells[ComboStage++]);
+                    } else if (!Globals.Me.TryAttack()) {
+                        if (Globals.Me.AttackTimer < Globals.System.GetTimeMs()) {
                             Globals.Me.AttackTimer = Globals.System.GetTimeMs() + Globals.Me.CalculateAttackTime();
                         }
                     }
+                    Pressed = true;
+                } else {
+                    Pressed = false;
                 }
 
                 if (Controls.KeyDown(Control.Interact)) {
@@ -183,6 +199,24 @@ namespace Intersect.Client.Entities
             var returnval = base.Update();
 
             return returnval;
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsSpellUsed(int[] SpellsArray) {
+            foreach (int i in SpellsArray)
+            {
+                //if ((Globals.Me.SpellCooldowns.ContainsKey(Spells[i].SpellId) || Globals.Me.SpellCooldowns[Spells[i].SpellId] >= Globals.System.GetTimeMs()))
+                //if (Globals.Me.SpellCooldowns.ContainsKey(Spells[i].SpellId))
+                if (Globals.Me.SpellCooldowns.ContainsKey(Spells[i].SpellId) && Globals.Me.SpellCooldowns[Spells[i].SpellId] >= Globals.System.GetTimeMs())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         //Loading
