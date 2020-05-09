@@ -111,7 +111,9 @@ namespace Intersect.Client.Core
                                     case Control.MoveRight:
                                         break;
 
-                                    case Control.Attack:
+                                    case Control.AttackZ:
+                                        break;
+                                    case Control.AttackX:
                                         break;
                                     case Control.Interact:
                                         //Log.Warn("Pressing Interact Button");

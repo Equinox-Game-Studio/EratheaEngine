@@ -12,7 +12,9 @@
 
         MoveRight,
 
-        Attack,
+        AttackZ,
+        
+        AttackX,
 
         Interact,
 

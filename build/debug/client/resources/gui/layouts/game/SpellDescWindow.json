@@ -18,6 +18,9 @@
   "ToolTipFont": null,
   "ToolTipTextColor": "",
   "Texture": "spelldesc.png",
+  "HoverSound": null,
+  "LeftMouseClickSound": null,
+  "RightMouseClickSound": null,
   "Children": {
     "SpellIcon": {
       "Bounds": "68,38,48,48",
@@ -38,7 +41,10 @@
       "ToolTipBackground": null,
       "ToolTipFont": null,
       "ToolTipTextColor": "",
-      "Texture": ""
+      "Texture": "",
+      "HoverSound": null,
+      "LeftMouseClickSound": null,
+      "RightMouseClickSound": null
     },
     "SpellName": {
       "Bounds": "4,8,177,20",
@@ -118,7 +124,8 @@
       "HideToolTip": false,
       "ToolTipBackground": null,
       "ToolTipFont": null,
-      "ToolTipTextColor": ""
+      "ToolTipTextColor": "",
+      "Font": null
     },
     "SpellDescText": {
       "Bounds": "88,0,1,16",

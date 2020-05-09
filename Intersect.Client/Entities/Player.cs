@@ -67,6 +67,7 @@ namespace Intersect.Client.Entities
         public int ComboStage = 0;
         //public int[] Z_Spells = new int[3]; // this will be triggered for X for now but you get the point
         public int[] Z_Spells = {0, 1, 2}; // this will be triggered for X for now but you get the point
+        public int[] X_Spells = {3, 4, 5}; // this will be triggered for X for now but you get the point
 
         bool Pressed = false;
 
@@ -170,14 +171,46 @@ namespace Intersect.Client.Entities
                     ProcessDirectionalInput();
                 }
                 
-                if (Controls.KeyDown(Control.Attack))
+                if (Controls.KeyDown(Control.AttackZ) || Controls.KeyDown(Control.AttackX))
                 {
-                    if (Z_Spells[0] != null && Spells[0].SpellId != Guid.Empty && !IsSpellUsed(Z_Spells) && !Pressed) {
-                        if (ComboStage == 3) ComboStage = 0;
-                        Globals.Me.TryUseSpell(Z_Spells[ComboStage++]);
-                    } else if (!Globals.Me.TryAttack()) {
-                        if (Globals.Me.AttackTimer < Globals.System.GetTimeMs()) {
-                            Globals.Me.AttackTimer = Globals.System.GetTimeMs() + Globals.Me.CalculateAttackTime();
+
+                    for (int i = 0; i < Spells.Length; i++)
+                    {
+                        Log.Debug("" + Spells[i].SpellId);
+                    }
+
+                    if (Controls.KeyDown(Control.AttackZ))
+                    {
+                        if (Z_Spells[0] != null && Spells[0].SpellId != Guid.Empty && !IsSpellUsed(Z_Spells) && !IsSpellUsed(X_Spells) && !Pressed)
+                        {
+                            if (ComboStage == 3) ComboStage = 0;
+                            Globals.Me.TryUseSpell(Z_Spells[ComboStage++]);
+                        }
+                        else if (!Globals.Me.TryAttack())
+                        {
+                            if (Globals.Me.AttackTimer < Globals.System.GetTimeMs())
+                            {
+                                Globals.Me.AttackTimer = Globals.System.GetTimeMs() + Globals.Me.CalculateAttackTime();
+                            }
+                        }
+                        //Pressed = true;
+                    }
+
+                    if (Controls.KeyDown(Control.AttackX))
+                    {
+                        
+                        if (X_Spells[0] != null && Spells[0].SpellId != Guid.Empty && !IsSpellUsed(X_Spells) && !IsSpellUsed(Z_Spells) && !Pressed)
+                        {
+                            
+                            if (ComboStage == 3) ComboStage = 0;
+                            Globals.Me.TryUseSpell(X_Spells[ComboStage++]);
+                        }
+                        else if (!Globals.Me.TryAttack())
+                        {
+                            if (Globals.Me.AttackTimer < Globals.System.GetTimeMs())
+                            {
+                                Globals.Me.AttackTimer = Globals.System.GetTimeMs() + Globals.Me.CalculateAttackTime();
+                            }
                         }
                     }
                     Pressed = true;
