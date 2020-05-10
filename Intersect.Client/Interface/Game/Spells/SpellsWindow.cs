@@ -42,6 +42,16 @@ namespace Intersect.Client.Interface.Game.Spells
             mSpellWindow.LoadJsonUi(GameContentManager.UI.InGame, Graphics.Renderer.GetResolutionString());
         }
 
+        public SpellsWindow(Canvas gameCanvas, String name)
+        {
+            mSpellWindow = new WindowControl(gameCanvas, name, false, "SpellsWindow");
+            mSpellWindow.DisableResizing();
+
+            mItemContainer = new ScrollControl(mSpellWindow, "SpellsContainer");
+            mItemContainer.EnableScroll(false, true);
+            mSpellWindow.LoadJsonUi(GameContentManager.UI.InGame, Graphics.Renderer.GetResolutionString());
+        }
+
         //Methods
         public void Update()
         {

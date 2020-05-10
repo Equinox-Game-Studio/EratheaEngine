@@ -19,7 +19,10 @@ using Intersect.GameObjects.Maps;
 using Intersect.Logging;
 using Intersect.Network.Packets.Server;
 
+using Intersect.Client.Interface.Game.Spells;
+
 using Newtonsoft.Json;
+using Intersect.Client.Framework.Gwen.Control;
 
 namespace Intersect.Client.Entities
 {
@@ -71,7 +74,8 @@ namespace Intersect.Client.Entities
 
         bool Pressed = false;
 
-
+        //private static Canvas gameCanvas = ;
+        //SpellsWindow Z_SpellsWindow = new SpellsWindow(gameCanvas);
 
         public Player(Guid id, PlayerEntityPacket packet) : base(id, packet)
         {

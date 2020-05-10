@@ -59,6 +59,12 @@ namespace Intersect.Client.Interface.Game
         [NotNull] private readonly Button mSpellsButton;
 
         [NotNull] private readonly SpellsWindow mSpellsWindow;
+        // CHANGED THIS STUFF
+        [NotNull] private readonly ImagePanel Z_SpellsBackground;
+
+        [NotNull] private readonly Button Z_SpellsButton;
+
+        [NotNull] private readonly SpellsWindow Z_SpellsWindow;
 
         private int mBackgroundHeight = 42;
 
@@ -90,6 +96,16 @@ namespace Intersect.Client.Interface.Game
             mSpellsButton = new Button(mSpellsBackground, "SpellsButton");
             mSpellsButton.SetToolTipText(Strings.GameMenu.spells);
             mSpellsButton.Clicked += SpellsButton_Clicked;
+
+            mSpellsBackground = new ImagePanel(mMenuContainer, "SpellsContainer");
+            mSpellsButton = new Button(mSpellsBackground, "SpellsButton");
+            mSpellsButton.SetToolTipText(Strings.GameMenu.spells);
+            mSpellsButton.Clicked += SpellsButton_Clicked;
+            //CHANGED
+            Z_SpellsBackground = new ImagePanel(mMenuContainer, "Z_SpellsContainer");
+            Z_SpellsButton = new Button(Z_SpellsBackground, "Z_SpellsButton");
+            Z_SpellsButton.SetToolTipText(Strings.GameMenu.spells);
+            Z_SpellsButton.Clicked += SpellsButton_Clicked;
 
             mCharacterBackground = new ImagePanel(mMenuContainer, "CharacterContainer");
             mCharacterButton = new Button(mCharacterBackground, "CharacterButton");
@@ -123,6 +139,7 @@ namespace Intersect.Client.Interface.Game
             mFriendsWindow = new FriendsWindow(gameCanvas);
             mInventoryWindow = new InventoryWindow(gameCanvas);
             mSpellsWindow = new SpellsWindow(gameCanvas);
+            Z_SpellsWindow = new SpellsWindow(gameCanvas, "Bruh");
             mCharacterWindow = new CharacterWindow(gameCanvas);
             mQuestsWindow = new QuestsWindow(gameCanvas);
         }
@@ -132,6 +149,7 @@ namespace Intersect.Client.Interface.Game
         {
             mInventoryWindow.Update();
             mSpellsWindow.Update();
+            Z_SpellsWindow.Update();
             mCharacterWindow.Update();
             mPartyWindow.Update();
             mFriendsWindow.Update();
@@ -156,6 +174,7 @@ namespace Intersect.Client.Interface.Game
             mPartyWindow.Hide();
             mQuestsWindow.Hide();
             mSpellsWindow.Hide();
+            Z_SpellsWindow.Hide();
         }
 
         public void ToggleCharacterWindow()
@@ -232,11 +251,13 @@ namespace Intersect.Client.Interface.Game
             if (mSpellsWindow.IsVisible())
             {
                 mSpellsWindow.Hide();
+                Z_SpellsWindow.Hide();
+
             }
             else
             {
                 HideWindows();
-                mSpellsWindow.Show();
+                Z_SpellsWindow.Show();
             }
         }
 
