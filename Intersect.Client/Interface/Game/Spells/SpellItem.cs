@@ -43,6 +43,7 @@ namespace Intersect.Client.Interface.Game.Spells
 
         //Drag/Drop References
         private SpellsWindow mSpellWindow;
+        private ComboWindow Z_SpellWindow;
 
         private string mTexLoaded = "";
 
@@ -53,6 +54,12 @@ namespace Intersect.Client.Interface.Game.Spells
         public SpellItem(SpellsWindow spellWindow, int index)
         {
             mSpellWindow = spellWindow;
+            mYindex = index;
+        }
+
+        public SpellItem(ComboWindow comboWindow, int index)
+        {
+            Z_SpellWindow = comboWindow;
             mYindex = index;
         }
 
@@ -113,6 +120,7 @@ namespace Intersect.Client.Interface.Game.Spells
             }
 
             mDescWindow = new SpellDescWindow(Globals.Me.Spells[mYindex].SpellId, mSpellWindow.X, mSpellWindow.Y);
+            //mDescWindow = new SpellDescWindow(Globals.Me.Spells[mYindex].SpellId, Z_SpellWindow.X, Z_SpellWindow.Y);
         }
 
         public FloatRect RenderBounds()
@@ -279,6 +287,38 @@ namespace Intersect.Client.Interface.Game.Spells
                                     bestIntersect =
                                         FloatRect.Intersect(mSpellWindow.Items[i].RenderBounds(), dragRect).Width *
                                         FloatRect.Intersect(mSpellWindow.Items[i].RenderBounds(), dragRect).Height;
+
+                                    bestIntersectIndex = i;
+                                }
+                            }
+                        }
+
+
+
+                        if (bestIntersectIndex > -1)
+                        {
+                            if (mYindex != bestIntersectIndex)
+                            {
+                                //Try to swap....
+                                PacketSender.SendSwapSpells(bestIntersectIndex, mYindex);
+                                Globals.Me.SwapSpells(bestIntersectIndex, mYindex);
+                            }
+                        }
+                    }
+                    else if (Z_SpellWindow.RenderBounds().IntersectsWith(dragRect))
+                    {
+                        for (var i = 0; i < Options.MaxInvItems; i++)
+                        {
+                            if (i < Z_SpellWindow.Items.Count &&
+                                Z_SpellWindow.Items[i].RenderBounds().IntersectsWith(dragRect))
+                            {
+                                if (FloatRect.Intersect(Z_SpellWindow.Items[i].RenderBounds(), dragRect).Width *
+                                    FloatRect.Intersect(Z_SpellWindow.Items[i].RenderBounds(), dragRect).Height >
+                                    bestIntersect)
+                                {
+                                    bestIntersect =
+                                        FloatRect.Intersect(Z_SpellWindow.Items[i].RenderBounds(), dragRect).Width *
+                                        FloatRect.Intersect(Z_SpellWindow.Items[i].RenderBounds(), dragRect).Height;
 
                                     bestIntersectIndex = i;
                                 }
