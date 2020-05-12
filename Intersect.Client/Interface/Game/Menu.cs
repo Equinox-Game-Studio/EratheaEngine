@@ -64,8 +64,6 @@ namespace Intersect.Client.Interface.Game
 
         [NotNull] private readonly Button Z_SpellsButton;
 
-        [NotNull] private readonly ComboWindow Z_SpellsWindow;
-
         private int mBackgroundHeight = 42;
 
         private int mBackgroundWidth = 42;
@@ -139,7 +137,6 @@ namespace Intersect.Client.Interface.Game
             mFriendsWindow = new FriendsWindow(gameCanvas);
             mInventoryWindow = new InventoryWindow(gameCanvas);
             mSpellsWindow = new SpellsWindow(gameCanvas);
-            Z_SpellsWindow = new ComboWindow(gameCanvas, "Z Combo");
             mCharacterWindow = new CharacterWindow(gameCanvas);
             mQuestsWindow = new QuestsWindow(gameCanvas);
         }
@@ -149,7 +146,6 @@ namespace Intersect.Client.Interface.Game
         {
             mInventoryWindow.Update();
             mSpellsWindow.Update();
-            Z_SpellsWindow.Update();
             mCharacterWindow.Update();
             mPartyWindow.Update();
             mFriendsWindow.Update();
@@ -174,7 +170,6 @@ namespace Intersect.Client.Interface.Game
             mPartyWindow.Hide();
             mQuestsWindow.Hide();
             mSpellsWindow.Hide();
-            Z_SpellsWindow.Hide();
         }
 
         public void ToggleCharacterWindow()
@@ -251,13 +246,11 @@ namespace Intersect.Client.Interface.Game
             if (mSpellsWindow.IsVisible())
             {
                 mSpellsWindow.Hide();
-                Z_SpellsWindow.Hide();
 
             }
             else
             {
                 //HideWindows();
-                Z_SpellsWindow.Show();
                 mSpellsWindow.Show();
             }
         }
