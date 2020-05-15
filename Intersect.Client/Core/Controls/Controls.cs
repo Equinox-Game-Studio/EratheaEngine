@@ -61,7 +61,8 @@ namespace Intersect.Client.Core.Controls
             CreateControlMap(Control.MoveDown, Keys.Down, Keys.S);
             CreateControlMap(Control.MoveLeft, Keys.Left, Keys.A);
             CreateControlMap(Control.MoveRight, Keys.Right, Keys.D);
-            CreateControlMap(Control.Attack, Keys.Z, Keys.X);
+            CreateControlMap(Control.AttackZ, Keys.Z, Keys.None);
+            CreateControlMap(Control.AttackX, Keys.X, Keys.None);
             CreateControlMap(Control.Interact, Keys.E, Keys.None);
             CreateControlMap(Control.Block, Keys.Q, Keys.RButton);
             CreateControlMap(Control.AutoTarget, Keys.Tab, Keys.None);

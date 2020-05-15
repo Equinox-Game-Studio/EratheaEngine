@@ -521,7 +521,8 @@ namespace Intersect.Client.Localization
 
             public static Dictionary<string, LocalizedString> controldict = new Dictionary<string, LocalizedString>
             {
-                {"attack", @"Attack:"},
+                {"attackz", @"AttackZ:"},
+                {"attackx", @"AttackX:"},
                 {"interact", @"Interact:" },
                 {"block", @"Block:"},
                 {"autotarget", @"Auto Target:"},

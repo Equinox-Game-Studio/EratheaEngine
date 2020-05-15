@@ -58,6 +58,7 @@ namespace Intersect.Server.Entities
 
         public bool HitEntity(Entity en)
         {
+            Console.WriteLine("You know where i am lmao");
             var targetEntity = en;
             if (targetEntity is EventPageInstance) return false;
             if (targetEntity != null && targetEntity != Parent.Owner)

@@ -1,0 +1,15 @@
+﻿2020-05-15 09:44:10.445 [Error] Received unhandled exception from .
+
+--------------------------------------------------------------------------------
+2020-05-15 09:44:10.449 [Error] 
+  Message: The process cannot access the file 'C:\Users\wahid\Documents\GitHub\EratheaEngine\build\debug\server\e_sqlite3.dll' because it is being used by another process.
+    Stack:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at Intersect.Utilities.ReflectionUtils.ExtractResource(String resourceName, String destinationName) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect (Core)\Utilities\ReflectionUtils.cs:line 64
+   at Intersect.Server.Core.Bootstrapper.ExportDependencies(String[] args) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Server\Core\Bootstrapper.cs:line 376
+   at Intersect.Server.Core.Bootstrapper.PreContextSetup(String[] args) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Server\Core\Bootstrapper.cs:line 211
+   at Intersect.Server.Core.Bootstrapper.Start(String[] args) in C:\Users\wahid\Documents\GitHub\EratheaEngine\Intersect.Server\Core\Bootstrapper.cs:line 46
+
+
+--------------------------------------------------------------------------------

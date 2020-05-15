@@ -1,5 +1,5 @@
 {
-  "Bounds": "532,299,364,244",
+  "Bounds": "428,299,364,244",
   "Padding": "0,4,8,0",
   "AlignmentEdgeDistances": "0,0,0,0",
   "AlignmentTransform": "0,0",
@@ -124,7 +124,8 @@
       "HideToolTip": false,
       "ToolTipBackground": null,
       "ToolTipFont": null,
-      "ToolTipTextColor": ""
+      "ToolTipTextColor": "",
+      "Font": null
     },
     "SpellStats": {
       "Bounds": "192,8,173,228",
@@ -144,7 +145,8 @@
       "HideToolTip": false,
       "ToolTipBackground": null,
       "ToolTipFont": null,
-      "ToolTipTextColor": ""
+      "ToolTipTextColor": "",
+      "Font": null
     },
     "SpellDescText": {
       "Bounds": "177,0,1,16",

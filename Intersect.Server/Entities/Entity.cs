@@ -1206,6 +1206,8 @@ namespace Intersect.Server.Entities
             byte projectileDir
         )
         {
+
+
             if (target is Resource && parentSpell != null)
             {
                 return;

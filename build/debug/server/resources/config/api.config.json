@@ -4,7 +4,7 @@
     "http://localhost:5400"
   ],
   "Cors": [],
-  "DataProtectionKey": "4C006F0D09F112960BE8ED65D7E76AED57104E916F67A551A268B1B1FCBD0673",
+  "DataProtectionKey": "499ECFCB5E16F9EB0A41414ACB8514E044CBA5E61E37BCC18CBDF79E3D152E5A",
   "Enabled": false,
   "DebugMode": false,
   "SeedMode": false,
