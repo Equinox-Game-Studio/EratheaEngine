@@ -24,6 +24,7 @@ namespace Intersect.Client.Interface.Game
 
         //Public Components - For clicking/dragging
         public HotBarWindow Hotbar;
+        public ComboBarWindow Z_Combo;
 
         private AdminWindow mAdminWindow;
 
@@ -98,6 +99,8 @@ namespace Intersect.Client.Interface.Game
             mChatBox = new Chatbox(GameCanvas, this);
             GameMenu = new Menu(GameCanvas);
             Hotbar = new HotBarWindow(GameCanvas);
+            Z_Combo = new ComboBarWindow(GameCanvas);
+
             PlayerBox = new EntityBox(GameCanvas, EntityTypes.Player, Globals.Me, true);
             if (mPictureWindow == null)
             {
@@ -317,6 +320,7 @@ namespace Intersect.Client.Interface.Game
             GameMenu?.Update(mShouldUpdateQuestLog);
             mShouldUpdateQuestLog = false;
             Hotbar?.Update();
+            Z_Combo?.Update();
             mDebugMenu?.Update();
             EscapeMenu.Update();
             PlayerBox?.Update();
