@@ -44,9 +44,9 @@ namespace Intersect.Client.Interface.Game.Hotbar
             for (var i = 0; i < Options.MaxHotbar; i++)
             {
                 Items.Add(new CombobarItem((byte)i, ComboWindow));
-                Items[i].Pnl = new ImagePanel(ComboWindow, "HotbarContainer" + i);
+                Items[i].Pnl = new ImagePanel(ComboWindow, "CombobarContainer" + i);
                 Items[i].Setup();
-                Items[i].KeyLabel = new Label(Items[i].Pnl, "HotbarLabel" + i);
+                Items[i].KeyLabel = new Label(Items[i].Pnl, "CombobarLabel" + i);
                 Items[i]
                     .KeyLabel.SetText(
                         Strings.Keys.keydict[

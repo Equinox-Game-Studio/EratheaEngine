@@ -219,6 +219,9 @@ namespace Intersect.Client.Entities
                 }
 
                 if (Controls.KeyDown(Control.Interact)) {
+
+                    Log.Debug("" + Hotbar[1].ItemOrSpellId);
+
                     Interact();   
                 }
 

@@ -325,6 +325,36 @@ namespace Intersect.Client.Interface.Game.Spells
                             Globals.Me.AddToHotbar((byte) bestIntersectIndex, 1, mYindex);
                         }
                     }
+                    else if (Interface.GameUi.Z_Combo.RenderBounds().IntersectsWith(dragRect))
+                    {
+                        for (var i = 0; i < Options.MaxHotbar; i++)
+                        {
+                            if (Interface.GameUi.Z_Combo.Items[i].RenderBounds().IntersectsWith(dragRect))
+                            {
+                                if (FloatRect.Intersect(
+                                            Interface.GameUi.Z_Combo.Items[i].RenderBounds(), dragRect
+                                        )
+                                        .Width *
+                                    FloatRect.Intersect(Interface.GameUi.Z_Combo.Items[i].RenderBounds(), dragRect)
+                                        .Height >
+                                    bestIntersect)
+                                {
+                                    bestIntersect =
+                                        FloatRect.Intersect(Interface.GameUi.Z_Combo.Items[i].RenderBounds(), dragRect)
+                                            .Width *
+                                        FloatRect.Intersect(Interface.GameUi.Z_Combo.Items[i].RenderBounds(), dragRect)
+                                            .Height;
+
+                                    bestIntersectIndex = i;
+                                }
+                            }
+                        }
+
+                        if (bestIntersectIndex > -1)
+                        {
+                            Globals.Me.AddToHotbar((byte)bestIntersectIndex, 1, mYindex);
+                        }
+                    }
 
                     mDragIcon.Dispose();
                 }

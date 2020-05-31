@@ -93,19 +93,19 @@ namespace Intersect.Client.Interface.Game.Hotbar
         {
             //Content Panel is layered on top of the container.
             //Shows the Item or Spell Icon
-            mContentPanel = new ImagePanel(Pnl, "HotbarIcon" + mYindex);
+            mContentPanel = new ImagePanel(Pnl, "CombobarIcon" + mYindex);
             mContentPanel.HoverEnter += pnl_HoverEnter;
             mContentPanel.HoverLeave += pnl_HoverLeave;
             mContentPanel.RightClicked += pnl_RightClicked;
             mContentPanel.Clicked += pnl_Clicked;
 
-            EquipPanel = new ImagePanel(mContentPanel, "HotbarEquipedIcon" + mYindex);
+            EquipPanel = new ImagePanel(mContentPanel, "CombobarEquipedIcon" + mYindex);
             EquipPanel.Texture = Graphics.Renderer.GetWhiteTexture();
-            EquipLabel = new Label(Pnl, "HotbarEquippedLabel" + mYindex);
+            EquipLabel = new Label(Pnl, "CombobarEquippedLabel" + mYindex);
             EquipLabel.IsHidden = true;
             EquipLabel.Text = Strings.Inventory.equippedicon;
             EquipLabel.TextColor = new Color(0, 255, 255, 255);
-            mCooldownLabel = new Label(Pnl, "HotbarCooldownLabel" + mYindex);
+            mCooldownLabel = new Label(Pnl, "CombobarCooldownLabel" + mYindex);
             mCooldownLabel.IsHidden = true;
             mCooldownLabel.TextColor = new Color(0, 255, 255, 255);
         }
@@ -502,25 +502,25 @@ namespace Intersect.Client.Interface.Game.Hotbar
                         float bestIntersect = 0;
                         var bestIntersectIndex = -1;
 
-                        if (Interface.GameUi.Hotbar.RenderBounds().IntersectsWith(dragRect))
+                        if (Interface.GameUi.Z_Combo.RenderBounds().IntersectsWith(dragRect))
                         {
                             for (var i = 0; i < Options.MaxHotbar; i++)
                             {
-                                if (Interface.GameUi.Hotbar.Items[i].RenderBounds().IntersectsWith(dragRect))
+                                if (Interface.GameUi.Z_Combo.Items[i].RenderBounds().IntersectsWith(dragRect))
                                 {
-                                    if (FloatRect.Intersect(Interface.GameUi.Hotbar.Items[i].RenderBounds(), dragRect)
+                                    if (FloatRect.Intersect(Interface.GameUi.Z_Combo.Items[i].RenderBounds(), dragRect)
                                             .Width *
-                                        FloatRect.Intersect(Interface.GameUi.Hotbar.Items[i].RenderBounds(), dragRect)
+                                        FloatRect.Intersect(Interface.GameUi.Z_Combo.Items[i].RenderBounds(), dragRect)
                                             .Height >
                                         bestIntersect)
                                     {
                                         bestIntersect =
                                             FloatRect.Intersect(
-                                                    Interface.GameUi.Hotbar.Items[i].RenderBounds(), dragRect
+                                                    Interface.GameUi.Z_Combo.Items[i].RenderBounds(), dragRect
                                                 )
                                                 .Width *
                                             FloatRect.Intersect(
-                                                    Interface.GameUi.Hotbar.Items[i].RenderBounds(), dragRect
+                                                    Interface.GameUi.Z_Combo.Items[i].RenderBounds(), dragRect
                                                 )
                                                 .Height;
 
